@@ -78,7 +78,7 @@ extension ViewController {
         profileNav.navigationBar.backgroundColor = .systemGray6
         profileNav.navigationBar.prefersLargeTitles = true
         
-        profileController.title = "Setting"
+        profileController.title = "Profile"
     }
     
 }
