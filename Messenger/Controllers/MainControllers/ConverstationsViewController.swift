@@ -14,7 +14,7 @@ class ConversationsController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = .red
+        view.backgroundColor = .systemGray6
         
         
         
@@ -25,7 +25,6 @@ class ConversationsController: UIViewController {
         
         //check User did log
         validateAuth()
-        
         
     }
     

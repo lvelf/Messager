@@ -241,8 +241,8 @@ extension RegisterViewController {
             guard !exists else {
                 //alert user
                 strongSelf.alertUserLoginError(message: "Looks like a user account already exits now")
-                return
                 
+                return
                 
             }
             
@@ -256,10 +256,10 @@ extension RegisterViewController {
                 guard authResult != nil, error == nil else {
                     //print("hh")
                     //print(error)
-                    let alert = UIAlertController(title: "你妈的",
-                                                  message: "", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
-                    self?.present(alert, animated: true)
+//                    let alert = UIAlertController(title: "你妈的",
+//                                                  message: "", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+//                    self?.present(alert, animated: true)
                     
                     print("error creating user")
                     return
