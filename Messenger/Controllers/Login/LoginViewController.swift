@@ -7,8 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
+
     
     //view container
     private let scrollView: UIScrollView = {
@@ -16,6 +18,8 @@ class LoginViewController: UIViewController {
         scrollView.clipsToBounds = true//子视图超出了父视图的边界就会被裁剪
         return scrollView
     }()
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     
     
@@ -155,11 +159,20 @@ extension LoginViewController {
                 return
         }
         
+        
+        
+        spinner.show(in: view)
         //Firebase Log In
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self]authResult, error in
+
             guard let strongSelf = self else {
                 return
             }
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+          
             
             guard let result = authResult, error == nil else {
                 print("Failed to log in user with email \(email)")
